@@ -87,6 +87,8 @@ public class ItemTest {
         assertEquals(itemOne, returnedItem);
     }
 
+    //Next test is to delete individual post based on ID
+
     @Test
     public void deleteAll_clearsAllItems() {
         Item itemOne = createItem();

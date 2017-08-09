@@ -77,7 +77,7 @@ public class Item {
     }
 
     public static Item findById(String itemId) {
-
+        //refactor as while loop
         Item result = null;
         for (Item item : itemsList) {
             if (item.getId().equals(itemId)) {
@@ -87,5 +87,6 @@ public class Item {
         return result;
     }
 
+    //Next step is to delete individual post based on ID
 
 }
