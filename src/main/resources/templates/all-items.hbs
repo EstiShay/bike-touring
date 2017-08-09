@@ -1,0 +1,22 @@
+{{#partial "content"}}
+    <p>List of items:</p>
+    {{#if listOfItems}}
+        {{#each listOfItems}}
+            <p>{{name}}</p>
+            <ul>
+                <li>Manufacturer: {{manufacturer}}</li>
+                <li>Model: {{model}}</li>
+                <li>Weight: {{weight}}</li>
+                <li>Price: {{price}}</li>
+                <li>Purchased: {{purchased}}</li>
+                <li>Packed: {{packed}}</li>
+            </ul>
+        {{/each}}
+    {{else}}
+        <p>No items yet</p>
+    {{/if}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}
