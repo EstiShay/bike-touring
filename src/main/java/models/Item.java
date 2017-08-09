@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 
@@ -12,6 +13,7 @@ public class Item {
     private double price;
     private boolean purchased;
     private boolean packed;
+    private static ArrayList<Item> itemsList = new ArrayList<>();
 
 
     public Item(String name, String manufacturer, String model, double weight, double price) {
@@ -23,6 +25,7 @@ public class Item {
         this.price = price;
         this.purchased = false;
         this.packed = false;
+        itemsList.add(this);
     }
 
     public String getId() {
@@ -63,5 +66,9 @@ public class Item {
 
     public boolean updatePackedStatus() {
         return packed = !packed;
+    }
+
+    public static ArrayList<Item> getItemsList() {
+        return itemsList;
     }
 }

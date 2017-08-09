@@ -63,12 +63,16 @@ public class ItemTest {
         assertEquals(true, item.updatePackedStatus());
     }
 
+    @Test
+    public void itemsCanBeAddedToItemsList_returnsSize() {
+        Item itemOne = createItem();
+        Item itemTwo = new Item("pannier", "ortlieb", "classic roller", 5, 199);
+        assertEquals(2, Item.getItemsList().size());
 
+    }
 
         // helper
     public Item createItem() {
         return new Item("pannier", "ortlieb", "classic roller", 5, 99);
     }
-
-
 }
