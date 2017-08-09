@@ -22,6 +22,12 @@ public class ItemTest {
     }
 
     @Test
+    public void getId_returnID() {
+        Item item = createItem();
+        assertTrue(item.getId() != null);
+    }
+
+    @Test
     public void getName_returnsNameOfItem() {
         Item item = createItem();
         assertEquals("pannier", item.getName());
@@ -68,7 +74,6 @@ public class ItemTest {
         Item itemOne = createItem();
         Item itemTwo = new Item("pannier", "ortlieb", "classic roller", 5, 199);
         assertEquals(2, Item.getItemsList().size());
-
     }
 
         // helper
