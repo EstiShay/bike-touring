@@ -1,0 +1,49 @@
+{{#block "header"}}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{#block "title"}}Hwy 101 Trip Planning{{/block}}</title>
+
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="/posts">See Full List</a></li>
+        <li role="presentation"><a href="/posts/new">Add a Item</a></li>
+    </ul>
+{{/block}}
+
+<div class="container">
+
+    <!--begin main template-->
+    <div class="page-header">
+        <img src="/images/blog-banner.jpg" width="100%">
+        <h1>Welcome to my Trip Planning Site</h1>
+    </div>
+
+    <div class="col-md-12">
+        {{#block "content"}}
+
+        {{/block}}
+    </div>
+
+    <!--end main template-->
+{{#block "footer"}}
+
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><a href="/posts/delete">DELETE ALL ITEMS</a></p>
+        </div>
+    </footer>
+    <p>Photos by ... on Unsplash</p>
+
+    </body>
+    </html>
+{{/block}}
