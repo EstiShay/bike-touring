@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Guest on 8/9/17.
- */
 public class ItemTest {
     @Before
     public void setUp() throws Exception {
@@ -30,8 +27,45 @@ public class ItemTest {
         assertEquals("pannier", item.getName());
     }
 
+    @Test
+    public void getManufacturer_returnsManufacturerOfItem() {
+        Item item = createItem();
+        assertEquals("ortlieb", item.getManufacturer());
+    }
 
-    // helper
+    @Test
+    public void getModel_returnsModelOfItem() {
+        Item item = createItem();
+        assertEquals("classic roller", item.getModel());
+    }
+
+    @Test
+    public void getWeight_returnsWeightOfItem() {
+        Item item = createItem();
+        assertEquals(5, item.getWeight(), 0);
+    }
+
+    @Test
+    public void getPrice_returnsPriceOfItem() {
+        Item item = createItem();
+        assertEquals(99, item.getPrice(), 0);
+    }
+
+    @Test
+    public void updatePurchaseStatus_returnOpposite() {
+        Item item = createItem();
+        assertEquals(true, item.updatePurchaseStatus());
+    }
+
+    @Test
+    public void updatePackedStatus_returnOpposite() {
+        Item item = createItem();
+        assertEquals(true, item.updatePackedStatus());
+    }
+
+
+
+        // helper
     public Item createItem() {
         return new Item("pannier", "ortlieb", "classic roller", 5, 99);
     }

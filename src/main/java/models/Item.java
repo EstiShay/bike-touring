@@ -56,4 +56,12 @@ public class Item {
     public boolean isPacked() {
         return packed;
     }
+
+    public boolean updatePurchaseStatus() {
+        return purchased = !purchased;
+    }
+
+    public boolean updatePackedStatus() {
+        return packed = !packed;
+    }
 }
