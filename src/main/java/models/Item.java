@@ -17,7 +17,7 @@ public class Item {
 
 
     public Item(String name, String manufacturer, String model, double weight, double price) {
-        this.id =  UUID.randomUUID().toString();;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -71,4 +71,21 @@ public class Item {
     public static ArrayList<Item> getItemsList() {
         return itemsList;
     }
+
+    public static void clearAll(){
+        itemsList.clear();
+    }
+
+    public static Item findById(String itemId) {
+
+        Item result = null;
+        for (Item item : itemsList) {
+            if (item.getId().equals(itemId)) {
+                return item;
+            }
+        }
+        return result;
+    }
+
+
 }

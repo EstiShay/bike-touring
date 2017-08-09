@@ -40,8 +40,11 @@ public class App {
             return new ModelAndView(allItems, "all-items.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/delete", (request, response) -> {
+            Map<String, Object> allItems = new HashMap<>();
+            Item.clearAll();
+            return new ModelAndView(allItems, "all-items.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
-
-
-
 }

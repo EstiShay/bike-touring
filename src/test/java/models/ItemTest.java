@@ -4,11 +4,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class ItemTest {
     @Before
     public void setUp() throws Exception {
+        Item.clearAll();
     }
 
     @After
@@ -74,6 +77,22 @@ public class ItemTest {
         Item itemOne = createItem();
         Item itemTwo = new Item("pannier", "ortlieb", "classic roller", 5, 199);
         assertEquals(2, Item.getItemsList().size());
+    }
+
+    @Test
+    public void findById_returnsCorrectItem() {
+        Item itemOne = createItem();
+        Item itemTwo = new Item("pannier", "ortlieb", "classic roller", 5, 199);
+        Item returnedItem = Item.findById(itemOne.getId());
+        assertEquals(itemOne, returnedItem);
+    }
+
+    @Test
+    public void deleteAll_clearsAllItems() {
+        Item itemOne = createItem();
+        Item itemTwo = new Item("pannier", "ortlieb", "classic roller", 5, 199);
+        Item.clearAll();
+        assertEquals(0, Item.getItemsList().size());
     }
 
         // helper
